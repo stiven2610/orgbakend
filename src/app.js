@@ -8,6 +8,6 @@ const app = express();
 app.use(express.json());
 
 // Rutas
-app.use('/api/users', userRoutes);
+app.use('/', userRoutes);
 
 module.exports = app;
