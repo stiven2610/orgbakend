@@ -9,14 +9,11 @@ const getColaboradores = async (req, res) => {
     console.log("error al obtener los colaboradores", error);
   }
 };
-const getColaboradoresEmpresa = async ( req,res) => {
-  const {empresa } = req.params;
+const getColaboradoresEmpresa = async (req, res) => {
+  const { empresa } = req.params;
   try {
-    
     const colaboradores = await Colaborador.find(empresa);
-    res.status(200).json(colaboradores)
-  } catch (error) {
-    
-  }
-}
-module.exports = { getColaboradores,getColaboradoresEmpresa };
+    res.status(200).json(colaboradores);
+  } catch (error) {}
+};
+module.exports = { getColaboradores, getColaboradoresEmpresa };

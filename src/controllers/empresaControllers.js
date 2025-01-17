@@ -12,7 +12,6 @@ const getEmpresas = async (req, res) => {
 const createEmpresa = async (req, res) => { 
   try {
     const { nombre, correo, contraseña } = req.body;
-
     // Crear una nueva instancia del modelo Empresa
     const newEmpresa = new Empresa({
       nombre,

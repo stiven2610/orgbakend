@@ -1,4 +1,3 @@
-const equipo = require("../models/equipo");
 const Equipo = require("../models/equipo");
 
 const getEquipos = async (req, res) => {
