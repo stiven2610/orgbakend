@@ -8,10 +8,10 @@ const login = async (req, res) => {
     const { correo, contraseña } = req.body;
     const empresa = await Empresa.findOne({ correo });
     if (!empresa)
-      return res.status(400).json({ message: "El correo no existe" });
-    const match = await bcrypt.compare(contraseña, empresa.contraseña);
+      return res.status(400).json({ message: "Usuario o contraseña Incorrectos!!!" });
+       const match = await bcrypt.compare(contraseña, empresa.contraseña);
     if (!match)
-      return res.status(400).json({ message: "Contraseña incorrecta" });
+      return res.status(400).json({ message: "Usuario o contraseña Incorrectos!!!" });
     const payload = {
         empresa: {
             id: empresa.id,
